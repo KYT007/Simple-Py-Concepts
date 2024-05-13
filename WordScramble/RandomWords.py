@@ -1,39 +1,36 @@
-from random_word import RandomWords
+
 import random
 import sys
+import nltk
 
-#This game will step up difficulty in levels. This is level one.
-def scramble_word_level_1(word):
+from nltk.corpus import words
+
+#We have switched to using the python nltk (natural language toolkit)
+#This will provide us a useful way to produce common words for the
+#game to scramble and the user to solve. 
+
+#We have a basic function up and running using the nltk. This is a baseline
+#function that the rest of the official game logic will be based on.
+#Much more functionality is to come.
+
+
+
+def scrambler():
+    word_list = words.words()
     while True:
-        word = list(word)
-        random.shuffle(word)
-        scrambled_word = ''.join(word)
-        return scrambled_word
+        indy = input("Please enter anything: ")
+        if indy:
+            random_word = random.choice(word_list)
+            if len(random_word) > 5:
+                print("yes")
+                continue
+            elif len(random_word) < 5:
+                print("no")
+                continue
 
-def word_scramble_level_2(word):
-    pass
-    # This game will step up difficulty in levels. This will be for level 2.
-
-def play_game():
-    r = RandomWords()
-    while True:
-        print("okay, lets play...can you unscramble the word?")
-        taskword = r.get_random_word()
-        if taskword and len(taskword) > 5:
-            break
-        scrambled_taskword = scramble_word_level_1(taskword)
-        print(scrambled_taskword)
-        print(taskword)
-        
-        
-        solve_guess = input("Can you unscramble the above word? Enter here: ")
-
-        if solve_guess == taskword:
-            print("nice, you got it!")
-            continue
-        else:
-            print("Nope, wrong!")
-            sys.exit()
+                
+scrambler()
+            
 
 
-play_game()
+    

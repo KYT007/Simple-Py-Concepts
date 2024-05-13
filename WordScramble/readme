@@ -1,4 +1,5 @@
 #A word scramble game I came up with. There are some very simple concepts 
 #I've actually forgotten that I needed to brush up on for this, I also
-#jut recently found the randmo-word module which I decided would be appropriate for use 
-#for this small learner project.
+#***Update 05/12/2024***
+#Discontinued use of the random-word module for this project in favor of 
+#Using the nltk (natural language toolkit) for python.
