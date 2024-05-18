@@ -1,0 +1,4 @@
+A simple Blind Auction CLI program utilizing dictionaries and loops for its core functionality. 
+This program makes use of the os module for a function to clear the console, to make it like a true
+"Blind Auction" experience. We utilize the sys module for the sys.exit() function to close the program
+with grace.
